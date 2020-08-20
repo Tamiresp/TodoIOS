@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7860F93424EDCAEC00B42D20 /* Insert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7860F93324EDCAEC00B42D20 /* Insert.storyboard */; };
+		7860F93624EDD5DE00B42D20 /* InsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F93524EDD5DE00B42D20 /* InsertViewController.swift */; };
+		7860F93A24EDE5C100B42D20 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F93824EDE5C100B42D20 /* ListCollectionViewCell.swift */; };
+		7860F93B24EDE5C100B42D20 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7860F93924EDE5C100B42D20 /* ListCollectionViewCell.xib */; };
 		7897F4D724EDB4C90073CD31 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897F4D624EDB4C90073CD31 /* CircleImageView.swift */; };
 		7897F4DA24EDB8810073CD31 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897F4D924EDB8810073CD31 /* CircleButton.swift */; };
 		78C47B2724EC705900C2EDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C47B2624EC705900C2EDA6 /* AppDelegate.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7860F93324EDCAEC00B42D20 /* Insert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Insert.storyboard; sourceTree = "<group>"; };
+		7860F93524EDD5DE00B42D20 /* InsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertViewController.swift; sourceTree = "<group>"; };
+		7860F93824EDE5C100B42D20 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		7860F93924EDE5C100B42D20 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		7897F4D624EDB4C90073CD31 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		7897F4D924EDB8810073CD31 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		78C47B2324EC705900C2EDA6 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +100,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7860F92F24EDCAB000B42D20 /* Insert */ = {
+			isa = PBXGroup;
+			children = (
+				7860F93224EDCACA00B42D20 /* Models */,
+				7860F93124EDCABF00B42D20 /* Controllers */,
+				7860F93024EDCAB800B42D20 /* Views */,
+			);
+			path = Insert;
+			sourceTree = "<group>";
+		};
+		7860F93024EDCAB800B42D20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7860F93324EDCAEC00B42D20 /* Insert.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7860F93124EDCABF00B42D20 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7860F93524EDD5DE00B42D20 /* InsertViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7860F93224EDCACA00B42D20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7860F93724EDE58B00B42D20 /* ListCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7860F93824EDE5C100B42D20 /* ListCollectionViewCell.swift */,
+				7860F93924EDE5C100B42D20 /* ListCollectionViewCell.xib */,
+			);
+			path = ListCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		7897F4D524EDB4550073CD31 /* CircleImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +215,7 @@
 		78C47B5724EC714700C2EDA6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7860F92F24EDCAB000B42D20 /* Insert */,
 				78C47B5B24EC71B600C2EDA6 /* List */,
 			);
 			path = Features;
@@ -181,6 +232,7 @@
 		78C47B5924EC718000C2EDA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7860F93724EDE58B00B42D20 /* ListCollectionViewCell */,
 				78C47B6024EC77A700C2EDA6 /* ListTableViewCell */,
 				78C47B5D24EC71E700C2EDA6 /* ListViewController.xib */,
 			);
@@ -329,8 +381,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C47B3324EC705D00C2EDA6 /* LaunchScreen.storyboard in Resources */,
+				7860F93B24EDE5C100B42D20 /* ListCollectionViewCell.xib in Resources */,
 				78C47B3024EC705D00C2EDA6 /* Assets.xcassets in Resources */,
 				78C47B5F24EC71E700C2EDA6 /* ListViewController.xib in Resources */,
+				7860F93424EDCAEC00B42D20 /* Insert.storyboard in Resources */,
 				78C47B2E24EC705900C2EDA6 /* Main.storyboard in Resources */,
 				78C47B6424EC781100C2EDA6 /* ListTableViewCell.xib in Resources */,
 			);
@@ -357,9 +411,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7860F93A24EDE5C100B42D20 /* ListCollectionViewCell.swift in Sources */,
 				7897F4D724EDB4C90073CD31 /* CircleImageView.swift in Sources */,
 				78C47B2B24EC705900C2EDA6 /* ViewController.swift in Sources */,
 				78C47B2724EC705900C2EDA6 /* AppDelegate.swift in Sources */,
+				7860F93624EDD5DE00B42D20 /* InsertViewController.swift in Sources */,
 				7897F4DA24EDB8810073CD31 /* CircleButton.swift in Sources */,
 				78C47B5E24EC71E700C2EDA6 /* ListViewController.swift in Sources */,
 				78C47B2924EC705900C2EDA6 /* SceneDelegate.swift in Sources */,

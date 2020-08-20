@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="TodoList" customModuleProvider="target">
             <connections>
-                <outlet property="fabButton" destination="Zp0-uW-IvH" id="tmT-Z0-1WN"/>
+                <outlet property="collectionView" destination="7sj-dN-49q" id="YhB-QD-emT"/>
+                <outlet property="fabButton" destination="Zp0-uW-IvH" id="D4n-T7-Spx"/>
                 <outlet property="tableView" destination="7p7-6G-bZo" id="Qbz-EH-YSX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,6 +25,16 @@
                     <rect key="frame" x="0.0" y="122" width="414" height="774"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7sj-dN-49q">
+                    <rect key="frame" x="0.0" y="122" width="414" height="740"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vGd-gv-nAx">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DAd-8n-c2b">
                     <rect key="frame" x="16" y="60" width="382" height="46"/>
                     <subviews>
@@ -44,6 +55,9 @@
                             <rect key="frame" x="336" y="12" width="46" height="22"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="insertButtonAction:" destination="-1" eventType="touchUpInside" id="HLR-5y-gHa"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -63,16 +77,23 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                     </state>
+                    <connections>
+                        <action selector="insertButtonAction:" destination="-1" eventType="touchUpInside" id="vQD-Ju-SPn"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="7sj-dN-49q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Y3-Hl-y1k"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7p7-6G-bZo" secondAttribute="trailing" id="7Ji-Je-RAg"/>
                 <constraint firstAttribute="bottom" secondItem="7p7-6G-bZo" secondAttribute="bottom" id="ArZ-jd-iJ4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DAd-8n-c2b" secondAttribute="trailing" constant="16" id="CVQ-t7-f5h"/>
                 <constraint firstItem="7p7-6G-bZo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DIM-XS-SK7"/>
                 <constraint firstItem="7p7-6G-bZo" firstAttribute="top" secondItem="DAd-8n-c2b" secondAttribute="bottom" constant="16" id="EcG-qc-5hC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zp0-uW-IvH" secondAttribute="bottom" constant="16" id="LAV-tn-pFI"/>
+                <constraint firstItem="7sj-dN-49q" firstAttribute="top" secondItem="DAd-8n-c2b" secondAttribute="bottom" constant="16" id="SQy-zD-U8t"/>
+                <constraint firstAttribute="bottom" secondItem="7sj-dN-49q" secondAttribute="bottom" constant="34" id="cQP-x6-bDn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7sj-dN-49q" secondAttribute="trailing" id="esp-wu-N2l"/>
                 <constraint firstItem="DAd-8n-c2b" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="gMB-7S-Zje"/>
                 <constraint firstItem="DAd-8n-c2b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="lz1-Q5-WzZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zp0-uW-IvH" secondAttribute="trailing" constant="24" id="nIK-qJ-1hw"/>

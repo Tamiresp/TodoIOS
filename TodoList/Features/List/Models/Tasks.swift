@@ -38,5 +38,8 @@ struct Tasks {
             }
         }
         
+        static var types: [ModelType] {
+            [.onPriority, .daily, .home]
+        }
     }
 }
