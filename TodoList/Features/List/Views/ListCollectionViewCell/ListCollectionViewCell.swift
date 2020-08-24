@@ -35,6 +35,9 @@ class ListCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionViewCell.backgroundColor = UIColor.lightGray
         configureCheck()
+        checkThird.isHidden = true
+        checkSecond.isHidden = true
+        checkFirst.isHidden = true
     }
     
     func configure(with model: Tasks) {
@@ -127,8 +130,5 @@ class ListCollectionViewCell: UICollectionViewCell {
         firstTaskLabel.text = "No tasks"
         secondTaskLabel.text = "No tasks"
         thirdTaskLabel.text = "No tasks"
-        checkThird.isHidden = true
-        checkSecond.isHidden = true
-        checkFirst.isHidden = true
     }
 }

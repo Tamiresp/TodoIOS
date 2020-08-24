@@ -154,10 +154,10 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         cell.data = self.data[indexPath.row]
         
-        if TodoDataSource.share.todos.count < 3 {
-            cell.configure2()
-        } else {
+        if TodoDataSource.share.todos.count > indexPath.row {
             cell.configure(with: TodoDataSource.share.todos[indexPath.row])
+        } else {
+           cell.configure2()
         }
        
         return cell
