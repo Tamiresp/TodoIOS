@@ -16,6 +16,10 @@ final class InsertViewController: UIViewController {
     @IBOutlet weak var typePicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var saveButton: CircleButton!
+    @IBOutlet weak var stack: UIStackView!
+    
+    fileprivate var topConstraint1: NSLayoutConstraint?
+    fileprivate var topConstraint2: NSLayoutConstraint?
     
     private var selectedType: Tasks.ModelType = .onPriority {
         didSet {
@@ -23,16 +27,38 @@ final class InsertViewController: UIViewController {
         }
     }
     
+    var isLandscape: Bool = false {
+           didSet {
+               configureStack()
+           }
+       }
+       
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         configureColor(animated: false)
         configureTextField()
         configureButton()
         configuteTypePicker()
+        isLandscape = traitCollection.verticalSizeClass == .compact
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+       isLandscape = newCollection.verticalSizeClass == .compact
+        if isLandscape {
+             configureStack()
+        } else {
+            stack.axis = .vertical
+        }
     }
 }
 
 extension InsertViewController {
+    private func configureStack() {
+        UIView.animate(withDuration: 0.3) {
+            self.stack.axis = .horizontal
+        }
+    }
     private func configureTextField() {
         todoField.borderStyle = .none
     }

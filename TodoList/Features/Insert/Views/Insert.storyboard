@@ -88,6 +88,7 @@
                         <outlet property="backButton" destination="TNj-oh-pfg" id="mER-fu-nGg"/>
                         <outlet property="datePicker" destination="3Ma-c1-CbE" id="eIc-6v-gSh"/>
                         <outlet property="saveButton" destination="nzU-BV-QVT" id="Bmm-Dl-BKg"/>
+                        <outlet property="stack" destination="X66-dS-LXi" id="Vfg-tk-AP9"/>
                         <outlet property="tagView" destination="xpV-St-BTd" id="yjO-jM-R2X"/>
                         <outlet property="todoField" destination="wIc-ga-A79" id="ao9-Lb-6Ef"/>
                         <outlet property="typePicker" destination="TZg-v6-Bae" id="BYU-ln-Ccc"/>
