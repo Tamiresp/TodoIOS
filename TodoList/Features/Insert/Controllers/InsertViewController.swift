@@ -40,7 +40,9 @@ final class InsertViewController: UIViewController {
         configureTextField()
         configureButton()
         configuteTypePicker()
-        isLandscape = traitCollection.verticalSizeClass == .compact
+        if traitCollection.verticalSizeClass == .compact {
+            configureStack()
+        }
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
