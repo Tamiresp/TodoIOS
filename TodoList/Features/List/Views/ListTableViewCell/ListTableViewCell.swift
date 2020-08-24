@@ -15,9 +15,15 @@ final class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var todoLabel: UILabel!
     
+    var actionBlock: (() -> Void)? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+    }
+    
+    @IBAction func editButton(sender: UIButton) {
+        actionBlock?()
     }
 }
 

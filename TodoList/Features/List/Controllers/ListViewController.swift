@@ -116,6 +116,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
                 return UITableViewCell()
         }
         cell.configure(with: TodoDataSource.share.todos[indexPath.row])
+            
+        cell.actionBlock = {
+           guard let viewController = UIStoryboard(name: "Insert", bundle: nil).instantiateInitialViewController() else { return }
+            cell.configure(with: TodoDataSource.share.todos[indexPath.row])
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+        
         return cell
     }
 
