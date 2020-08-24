@@ -60,6 +60,14 @@ extension InsertViewController {
             saveButton.backgroundColor = selectedType.typeColor
         }
     }
+    
+    func alert(){
+        let alert = UIAlertController(title:"Warning", message: "Preencha campo de Todo", preferredStyle:UIAlertController.Style.alert )
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+            return
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension InsertViewController {
@@ -74,10 +82,13 @@ extension InsertViewController {
             return
         }
         
-        let model = Tasks(type: selectedType, descTask: text, date: datePicker.date)
-        TodoDataSource.share.todos.append(model)
-        navigationController?.popViewController(animated: true)
-        
+        if text.isEmpty {
+            alert()
+        } else {
+            let model = Tasks(type: selectedType, descTask: text, date: datePicker.date)
+            TodoDataSource.share.todos.append(model)
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
 

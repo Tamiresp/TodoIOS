@@ -16,10 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-St-BTd">
-                                <rect key="frame" x="0.0" y="5" width="8" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-St-BTd">
+                                <rect key="frame" x="0.0" y="0.0" width="8" height="896"/>
                                 <color key="backgroundColor" name="home_color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="jCd-TG-5a9"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNj-oh-pfg" customClass="CircleButton" customModule="TodoList" customModuleProvider="target">
                                 <rect key="frame" x="20" y="60" width="40" height="40"/>
@@ -36,7 +38,7 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X66-dS-LXi">
-                                <rect key="frame" x="20" y="140" width="378" height="498"/>
+                                <rect key="frame" x="20" y="140" width="378" height="604"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wIc-ga-A79">
                                         <rect key="frame" x="0.0" y="0.0" width="378" height="50"/>
@@ -49,8 +51,8 @@
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZg-v6-Bae">
                                         <rect key="frame" x="0.0" y="58" width="378" height="216"/>
                                     </pickerView>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Ma-c1-CbE">
-                                        <rect key="frame" x="0.0" y="282" width="378" height="216"/>
+                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Ma-c1-CbE">
+                                        <rect key="frame" x="0.0" y="282" width="378" height="322"/>
                                     </datePicker>
                                 </subviews>
                             </stackView>
@@ -74,7 +76,11 @@
                             <constraint firstItem="TNj-oh-pfg" firstAttribute="leading" secondItem="n5s-vz-ddj" secondAttribute="leading" constant="20" id="DRC-JN-CYg"/>
                             <constraint firstItem="X66-dS-LXi" firstAttribute="top" secondItem="TNj-oh-pfg" secondAttribute="bottom" constant="40" id="Nw4-W2-9QF"/>
                             <constraint firstItem="n5s-vz-ddj" firstAttribute="bottom" secondItem="nzU-BV-QVT" secondAttribute="bottom" constant="16" id="Qmq-tp-twj"/>
+                            <constraint firstAttribute="top" secondItem="xpV-St-BTd" secondAttribute="top" id="WNx-ao-wmo"/>
+                            <constraint firstItem="xpV-St-BTd" firstAttribute="leading" secondItem="7b8-N8-Jn9" secondAttribute="leading" id="ZbH-HY-bDb"/>
                             <constraint firstItem="n5s-vz-ddj" firstAttribute="trailing" secondItem="X66-dS-LXi" secondAttribute="trailing" constant="16" id="ahy-Ed-gec"/>
+                            <constraint firstItem="xpV-St-BTd" firstAttribute="bottom" secondItem="7b8-N8-Jn9" secondAttribute="bottom" id="jOe-1W-eB0"/>
+                            <constraint firstItem="nzU-BV-QVT" firstAttribute="top" secondItem="X66-dS-LXi" secondAttribute="bottom" constant="32" id="pKz-f1-Z7b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n5s-vz-ddj"/>
                     </view>
