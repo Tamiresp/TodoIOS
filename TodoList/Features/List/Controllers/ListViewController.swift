@@ -19,6 +19,8 @@ final class ListViewController: UIViewController {
     @IBOutlet weak var fabButton: CircleButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var label = UILabel()
+    
     let data = [Types(title: "ONPRIORITY", color: UIColor(named: "on_priority_color")!), Types(title: "DAILY", color: UIColor(named: "daily_color")!), Types(title: "HOME", color: UIColor(named: "home_color")!)]
     
     var isLandscape: Bool = false {
@@ -32,6 +34,9 @@ final class ListViewController: UIViewController {
         confNavigationBar()
         configureTableView()
         configureCollectionView()
+        
+        label.text = "Adicione uma nova atividade"
+        label.textAlignment = .center
         
         fabButton.isHidden = traitCollection.verticalSizeClass == .compact
         isLandscape = traitCollection.verticalSizeClass == .compact
@@ -101,12 +106,7 @@ extension ListViewController{
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if TodoDataSource.share.todos.count == 0 {
-            self.tableView.setEmptyMessage("Sem Tasks Adicionadas")
-        } else {
-            self.tableView.restore()
-        }
-        
+        tableView.backgroundView = TodoDataSource.share.todos.count == 0 ? label : nil
         return TodoDataSource.share.todos.count
     }
     
@@ -137,10 +137,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
 extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if TodoDataSource.share.todos.count == 0 {
-            self.collectionView.setEmptyMessage("Sem Tasks Adicionadas")
+            self.collectionView.setEmptyMessage("Adicione uma nova atividade")
             return 0
         } else {
-            self.collectionView.restore()
+            self.collectionView.backgroundView = nil
             return Tasks.ModelType.types.count
         }
     }
@@ -171,32 +171,12 @@ extension ListViewController {
     
 }
 
-extension UITableView {
-    func setEmptyMessage(_ message: String) {
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-        messageLabel.text = message
-        messageLabel.textAlignment = .center;
-        messageLabel.sizeToFit()
-        
-        self.backgroundView = messageLabel;
-    }
-    
-    func restore() {
-        self.backgroundView = nil
-    }
-}
-
 extension UICollectionView {
     func setEmptyMessage(_ message: String) {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         messageLabel.text = message
         messageLabel.textAlignment = .center;
-        messageLabel.sizeToFit()
         
         self.backgroundView = messageLabel;
-    }
-    
-    func restore() {
-        self.backgroundView = nil
     }
 }

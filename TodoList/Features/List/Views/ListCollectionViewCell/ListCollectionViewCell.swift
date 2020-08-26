@@ -19,6 +19,7 @@ class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var checkSecond: UIButton!
     @IBOutlet weak var checkThird: UIButton!
     
+    
     var home: [String] = []
     var onPriority: [String] = []
     var daily: [String] = []
@@ -120,9 +121,9 @@ class ListCollectionViewCell: UICollectionViewCell {
     
     
     private func checkText(label: UILabel) {
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: label.text!)
-        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
-        label.attributedText = attributeString
+        let string: NSMutableAttributedString =  NSMutableAttributedString(string: label.text!)
+        string.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, string.length))
+        label.attributedText = string
     }
     
     
